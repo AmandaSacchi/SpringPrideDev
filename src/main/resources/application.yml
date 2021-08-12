@@ -1,6 +1,11 @@
-
-spring.datasource.username=amanda;
-spring.datasource.password=123trocar;
-spring.datasource.url=jdbc:mysql://pridedevdatabase.c3lbe0bvk2jp.us-east-1.rds.amazonaws.com/amanda;
-spring.jpa.hibernate.ddl-auto= update;
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring:
+    datasource:
+        
+        username: amanda
+        password: 123trocar
+        url: jdbc:mysql://pridedevdatabase.c3lbe0bvk2jp.us-east-1.rds.amazonaws.com/amanda
+         
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
