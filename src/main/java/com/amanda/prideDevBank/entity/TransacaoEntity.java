@@ -1,21 +1,17 @@
 package com.amanda.prideDevBank.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence. *;
 
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name="transacao")
 @Component
-public class TransacaoEntity {
+public class TransacaoEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +21,7 @@ public class TransacaoEntity {
 
     @JsonProperty("valor")
     private Double valor;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id_conta", referencedColumnName = "id")
     private ContaEntity contaOrigem;
 
