@@ -1,6 +1,6 @@
 package com.amanda.prideDevBank.entity;
 
-import javax.persistence. *;
+import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
@@ -13,6 +13,10 @@ import java.io.Serializable;
 @Component
 public class TransacaoEntity implements Serializable {
 
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
